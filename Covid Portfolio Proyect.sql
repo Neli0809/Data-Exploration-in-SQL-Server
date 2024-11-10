@@ -10,30 +10,34 @@ From PortfolioProjectCovid..CovidDeaths
 Where continent is not null 
 order by 3,4
 
+--Select *
+--From PortfolioProjectCovid..CovidVaccinations
+--order by 3,4
 
--- Select Data that we are going to be starting with
+
+-- Select Data that we are going to be using
 
 Select Location, date, total_cases, new_cases, total_deaths, population
 From PortfolioProjectCovid..CovidDeaths
-Where location like '%asia%'
+Where continent is not null
 order by 1,2
-
 
 -- Total Cases vs Total Deaths
 -- Shows likelihood of dying if you contract covid in your country
 
 Select Location, date, total_cases,total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
 From PortfolioProjectCovid..CovidDeaths
-where location like '%asia%'
+where location like '%armenia%'
+and continent is not null
 order by 1,2
 
 
--- Total Cases vs Population
+-- Looking at Total Cases vs Population
 -- Shows what percentage of population infected with Covid
 
 Select Location, date, Population, total_cases,  (total_cases/population)*100 as PercentPopulationInfected
-From PortfolioProject..CovidDeaths
---Where location like '%asia%'
+From PortfolioProjectCovid..CovidDeaths
+--Where location like '%armenia%'
 order by 1,2
 
 
