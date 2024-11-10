@@ -27,7 +27,7 @@ order by 1,2
 
 Select Location, date, total_cases,total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
 From PortfolioProjectCovid..CovidDeaths
-where location like '%armenia%'
+where location like '%austria%'
 and continent is not null
 order by 1,2
 
@@ -37,7 +37,7 @@ order by 1,2
 
 Select Location, date, Population, total_cases,  (total_cases/population)*100 as PercentPopulationInfected
 From PortfolioProjectCovid..CovidDeaths
---Where location like '%armenia%'
+--Where location like '%austria%'
 order by 1,2
 
 
